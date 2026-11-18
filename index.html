@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eee8df">
+<title>À travers les kilomètres</title>
+<style>
+:root{--paper:#f3eee7;--ink:#29251f;--muted:#786f64;--line:#d8cfc3;--accent:#8b725d;--card:#faf8f4}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+main{max-width:760px;margin:auto;padding:28px 20px 70px}
+.hero{min-height:440px;display:flex;flex-direction:column;justify-content:flex-end;padding:34px 28px;background:linear-gradient(180deg,rgba(25,22,19,.08),rgba(25,22,19,.72)),url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1600&q=85') center/cover;color:#fff;border-radius:3px}
+.kicker,.small{font:11px/1.6 Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+h1{font-size:clamp(38px,8vw,66px);font-weight:400;line-height:1.02;margin:14px 0}
+.hero p{font-size:17px;line-height:1.6;max-width:480px;color:#f1eae1}
+.intro{text-align:center;padding:42px 12px 30px}.intro h2,.final h2{font-size:30px;font-weight:400;font-style:italic}.intro p{color:var(--muted);line-height:1.7}
+.count{font:12px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-top:20px}
+.grid{display:grid;gap:13px;margin-top:24px}
+.chapter{background:var(--card);border:1px solid var(--line);padding:21px 22px;display:grid;grid-template-columns:42px 1fr;gap:13px;align-items:start}
+.num{font:12px Arial,sans-serif;color:var(--accent);padding-top:5px}
+.chapter h3{font-size:22px;font-weight:400;font-style:italic;margin:0 0 7px}
+.chapter p{font-size:14px;line-height:1.6;color:var(--muted);margin:0 0 13px}
+.status{font:10px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+.action{margin-top:13px}
+button{background:var(--ink);color:white;border:0;padding:11px 16px;font:11px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+button:disabled{background:#b8afa4;cursor:not-allowed}
+input{width:min(100%,240px);padding:11px;border:1px solid var(--line);background:white;font:14px Arial,sans-serif;margin-right:6px}
+.content{display:none;margin-top:15px;padding-top:15px;border-top:1px solid var(--line);font-size:15px;line-height:1.8;white-space:pre-line}
+.content.open{display:block}
+.note{font:12px/1.6 Arial,sans-serif;color:var(--muted);margin-top:25px}
+.final{margin-top:30px;text-align:center;background:#e8dfd4;padding:34px 22px}
+footer{text-align:center;padding:28px 0;color:var(--muted);font:10px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+@media(min-width:620px){.grid{grid-template-columns:1fr 1fr}.chapter:last-child{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+<div class="kicker">08 août 2026 — 08 décembre 2026</div>
+<h1>À travers<br>les kilomètres</h1>
+<p>Un petit endroit rien qu'à nous deux. Notre histoire, depuis le premier regard jusqu'aux retrouvailles.</p>
+</section>
+<section class="intro">
+<div class="small">Un petit bout de nous</div>
+<h2>Pour toi, où que tu sois.</h2>
+<p>Il y a des kilomètres entre nous, mais tous ces souvenirs et tout ce qui nous attend continuent de nous rapprocher.</p>
+<div class="count" id="countdown">Jusqu'à nos retrouvailles · 8 décembre 2026</div>
+</section>
+<section class="grid" id="chapters">
+<article class="chapter" data-date="2026-11-18T00:00:00" data-code="080826">
+<div class="num">01</div><div><h3>Le commencement</h3><p>Tout a commencé quelque part, un jour qui est devenu important.</p><div class="status">Disponible avec un code</div>
+<div class="action"><input aria-label="Code du chapitre 1" placeholder="Ton code secret"><button onclick="unlock(this)">Ouvrir</button></div>
+<div class="content">Le 8 août 2026. Notre date, notre point de départ.\n\nÀ personnaliser : raconte ici votre rencontre à la clinique, vos premiers échanges et ce que tu as ressenti au début.</div></div></article>
+<article class="chapter" data-date="2026-11-20T00:00:00">
+<div class="num">02</div><div><h3>Toi et moi</h3><p>Les petits détails, les habitudes, les différences et les souvenirs qui n'appartiennent qu'à nous.</p><div class="status">S'ouvre le 20 novembre</div><div class="action"><button disabled>Pas encore…</button></div>
+<div class="content">À personnaliser : ajoute vos souvenirs préférés, vos blagues, vos photos et les petites choses que tu aimes chez lui.</div></div></article>
+<article class="chapter" data-date="2026-11-23T00:00:00" data-code="MILLENAIRE">
+<div class="num">03</div><div><h3>Ce qui nous lie</h3><p>Tout ce que la distance ne change pas.</p><div class="status">Date + code secret · 23 novembre</div><div class="action"><input aria-label="Code du chapitre 3" placeholder="Ton code secret"><button onclick="unlock(this)">Ouvrir</button></div>
+<div class="content">Même loin, tu fais partie de mes journées. Je pense à toi dans les petits moments, dans les choses que j'aimerais te raconter et dans celles que j'aimerais vivre avec toi.\n\nÀ personnaliser avec une déclaration qui vous ressemble.</div></div></article>
+<article class="chapter" data-date="2026-11-29T00:00:00">
+<div class="num">04</div><div><h3>10 000 kilomètres</h3><p>La Réunion, la métropole, les appels et le manque. Une parenthèse loin l'un de l'autre, mais toujours ensemble.</p><div class="status">S'ouvre le 29 novembre</div><div class="action"><button disabled>Pas encore…</button></div>
+<div class="content">À personnaliser : ajoute un message vocal ou une vidéo, et raconte ce qui te manque le plus dans votre quotidien.</div></div></article>
+<article class="chapter" data-date="2026-12-02T00:00:00" data-code="COSTARICA">
+<div class="num">05</div><div><h3>Notre avenir</h3><p>Les voyages, les projets et toutes les journées ordinaires que j'ai hâte de partager avec toi.</p><div class="status">Date + code secret · 2 décembre</div><div class="action"><input aria-label="Code du chapitre 5" placeholder="Ton code secret"><button onclick="unlock(this)">Ouvrir</button></div>
+<div class="content">À personnaliser : Costa Rica, Espagne, vos envies de voyages et les projets que vous imaginez à deux.</div></div></article>
+<article class="chapter" data-date="2026-12-05T00:00:00">
+<div class="num">06</div><div><h3>Encore un peu de patience</h3><p>Les derniers jours avant de se retrouver.</p><div class="status">S'ouvre le 5 décembre</div><div class="action"><button disabled>Pas encore…</button></div>
+<div class="content">À personnaliser : une lettre pour les derniers jours, ce que tu as envie de faire dès vos retrouvailles et ce que tu ressens à l'approche du départ.</div></div></article>
+<article class="chapter" data-date="2026-12-08T18:00:00" data-code="DANS TES BRAS">
+<div class="num">07</div><div><h3>Dans tes bras</h3><p>La dernière page. À ouvrir au moment où la distance prend fin.</p><div class="status">Verrouillé jusqu'au 8 décembre à 18 h, heure de Paris</div><div class="action"><input aria-label="Code du chapitre final" placeholder="Ton code secret"><button onclick="unlock(this)">Ouvrir</button></div>
+<div class="content">Tu y es. Plus besoin de compter les kilomètres.\n\nÀ personnaliser : place ici ta déclaration finale, une vidéo de toi ou votre chanson.</div></div></article>
+</section>
+<section class="final"><div class="small">À retenir</div><h2>Je compte les jours.</h2><p>Rendez-vous le 8 décembre 2026 à 18 h, heure de Paris.</p></section>
+<p class="note">Ce site est un cadeau personnel. Les codes de cette première version sont inscrits dans le code de la page : ils servent de petit jeu, pas de protection confidentielle. Remplace les textes, les codes et les dates avant de partager le lien.</p>
+<footer>Fait avec amour · 08.08.26</footer>
+</main>
+<script>
+function parisNow(){return new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'}))}
+function parseParis(s){return new Date(s+'Z')}
+function update(){
+ const now=parisNow(), target=new Date('2026-12-08T18:00:00'), diff=target-now;
+ const el=document.getElementById('countdown');
+ if(diff<=0){el.textContent='Le moment est arrivé.';return}
+ const days=Math.floor(diff/86400000), hours=Math.floor(diff%86400000/3600000);
+ el.textContent=`Encore ${days} jours et ${hours} heures avant nos retrouvailles`;
+ document.querySelectorAll('.chapter').forEach(c=>{
+   const date=new Date(c.dataset.date), btn=c.querySelector('button'), status=c.querySelector('.status');
+   if(now>=date && !c.dataset.code){btn.disabled=false;btn.textContent='Découvrir';status.textContent='Disponible';}
+   else if(now<date){btn.disabled=true;btn.textContent='Pas encore…';}
+   else if(c.dataset.code){btn.disabled=false;btn.textContent='Entrer le code';}
+ });
+}
+function unlock(btn){
+ const c=btn.closest('.chapter'), now=parisNow(), date=new Date(c.dataset.date);
+ if(now<date){alert('Cette surprise n’est pas encore disponible.');return}
+ if(c.dataset.code){
+  const input=c.querySelector('input');
+  if((input.value||'').trim().toUpperCase()!==c.dataset.code){alert('Ce n’est pas le bon code. Essaie encore.');return}
+ }
+ c.querySelector('.content').classList.add('open');
+ btn.textContent='Chapitre découvert';btn.disabled=true;
+ const input=c.querySelector('input');if(input)input.disabled=true;
+}
+update();setInterval(update,60000);
+</script>
+</body></html>
